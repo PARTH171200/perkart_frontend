@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import { Link } from 'react-router-dom';
 import { Mail, Globe, Linkedin, Twitter, Instagram, ArrowUpRight } from 'lucide-react';
 // 1. Import the logo

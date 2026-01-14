@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import { Scan, BrainCircuit, Lightbulb, ArrowRight, CheckCircle2 } from 'lucide-react';
 
 const InnovationProcess = () => {

@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react'; // <--- 1. Import useEffect
-import { ArrowLeft, Shield, Lock, FileText, Mail, MapPin } from 'lucide-react';
+import { useEffect } from 'react'; // <--- 1. Import useEffect
+import { ArrowLeft, Shield, Lock, Mail, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom'; // <--- 2. Import Link for "Back to Home"
 
 const PrivacyPolicy = () => {

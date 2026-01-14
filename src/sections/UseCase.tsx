@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import { Lightbulb, Briefcase, Building2, HardHat, ArrowUpRight } from 'lucide-react';
 
 const UseCases = () => {

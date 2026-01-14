@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react';
+import  { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Target, Globe, Zap, Search, ArrowRight, Quote } from 'lucide-react';
-import founderImage from '../assets/founder.jpeg'// Replace with actual path to founder's image
+
+import founderImage from '../assets/founder.jpeg' 
 const About = () => {
   
   // Scroll to top on load

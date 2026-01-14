@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import { Smartphone, Globe, Sparkles, Zap } from 'lucide-react';
 
 const FinalCTA = () => {

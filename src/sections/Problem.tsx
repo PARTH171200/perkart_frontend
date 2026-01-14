@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import { AlertTriangle, ZapOff, Layers, Lock, AlertCircle } from 'lucide-react';
 
 const ProblemStatement = () => {

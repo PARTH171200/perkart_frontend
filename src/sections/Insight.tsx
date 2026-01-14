@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Eye, Zap, ArrowRight, Infinity } from 'lucide-react';
 
 const InsightSection = () => {

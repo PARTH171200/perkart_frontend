@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { ScanFace, Sparkles, MoveRight, Smartphone, Globe, Cpu } from 'lucide-react';
+import { useState, useEffect, useRef } from 'react';
+import { ScanFace, Sparkles, Smartphone, Globe, Cpu } from 'lucide-react';
 
 const Hero = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });

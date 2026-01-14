@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import { Check, X, Sparkles, Building2, Zap } from 'lucide-react';
 
 interface PricingFeature {

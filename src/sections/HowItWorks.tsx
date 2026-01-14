@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import { UploadCloud, Cpu, Lightbulb, TrendingUp, ChevronRight } from 'lucide-react';
 
 const ProductHowItWorks = () => {
