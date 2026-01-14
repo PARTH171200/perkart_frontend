@@ -3,7 +3,7 @@ import { Eye, Zap, ArrowRight, Infinity } from 'lucide-react';
 
 const InsightSection = () => {
   return (
-    <section className="relative w-full py-32 bg-[#0a0a0a] overflow-hidden flex flex-col items-center justify-center font-sans">
+    <section id='insight' className="relative w-full py-32 bg-[#0a0a0a] overflow-hidden flex flex-col items-center justify-center font-sans">
       
       {/* --- AMBIENT BACKGROUND --- */}
       <div className="absolute inset-0 z-0 pointer-events-none">

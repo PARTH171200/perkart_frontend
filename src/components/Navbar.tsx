@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom"; // 1. Import Router hooks
+import { Link, useLocation } from "react-router-dom"; 
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Download, ChevronRight } from "lucide-react";
 import logo from "../assets/image.png"; 
@@ -7,7 +7,7 @@ import logo from "../assets/image.png";
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const location = useLocation(); // 2. Get current route
+  const location = useLocation(); 
 
   // Handle scroll effect
   useEffect(() => {
@@ -18,29 +18,27 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // 3. Updated Links: Use "/#id" for sections on Home
+  // Updated Links
   const navLinks = [
     { name: "Home", href: "/", type: "link" },
-    { name: "About", href: "/about", type: "link" }, // External Page
-    { name: "How It Works", href: "/#how-it-works", type: "hash" }, // Section on Home
-    { name: "Insights", href: "/#insight", type: "hash" }, // Section on Home
-    { name: "Pricing", href: "/#pricing", type: "hash" }, // Section on Home
+    { name: "About", href: "/about", type: "link" }, 
+    { name: "How It Works", href: "/#how-it-works", type: "hash" }, 
+    { name: "Insights", href: "/#insight", type: "hash" }, 
+    { name: "Pricing", href: "/#pricing", type: "hash" }, 
   ];
 
-  // 4. Smart Scroll Function
+  // Smart Scroll Function
   const handleNavClick = (e: React.MouseEvent, href: string, type: string) => {
-    setIsMobileMenuOpen(false); // Close mobile menu
+    setIsMobileMenuOpen(false); 
 
     if (type === 'hash') {
       const targetId = href.replace('/#', '');
       const element = document.getElementById(targetId);
 
-      // If we are ALREADY on home page, prevent navigation and just scroll
       if (location.pathname === '/' && element) {
         e.preventDefault();
         element.scrollIntoView({ behavior: 'smooth' });
       }
-      // If we are on "About" page, do nothing here -> The <Link> will navigate to "/" and browser handles the hash
     }
     
     if (href === '/' && location.pathname === '/') {
@@ -93,16 +91,22 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* --- DESKTOP CTAs --- */}
+          {/* --- DESKTOP CTA (Login Removed) --- */}
           <div className="hidden md:flex items-center gap-4">
-            <button className="text-sm font-semibold text-white hover:text-cyan-400 transition-colors px-4 py-2">
-              Login
-            </button>
-            <button className="group relative px-5 py-2.5 bg-white text-black text-sm font-bold rounded-lg overflow-hidden transition-transform hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(255,255,255,0.2)]">
-              <span className="relative z-10 flex items-center gap-2">
+            
+            {/* UPDATED DOWNLOAD BUTTON */}
+            <button className="group relative px-5 py-2.5 bg-zinc-900 border border-zinc-700 text-zinc-300 text-sm font-bold rounded-lg overflow-hidden cursor-not-allowed transition-all hover:border-zinc-600">
+              
+              {/* Original Text: Slides UP on hover */}
+              <span className="relative z-10 flex items-center gap-2 transition-transform duration-300 group-hover:-translate-y-[150%]">
                 Download App <Download size={16} />
               </span>
-              <div className="absolute inset-0 z-0 bg-gradient-to-r from-transparent via-cyan-200 to-transparent -translate-x-full group-hover:animate-shimmer"></div>
+              
+              {/* "Launching Soon" Text: Slides IN from bottom on hover */}
+              <div className="absolute inset-0 z-10 flex items-center justify-center text-cyan-400 font-semibold transition-transform duration-300 translate-y-[150%] group-hover:translate-y-0">
+                Launching Soon
+              </div>
+
             </button>
           </div>
 
@@ -139,25 +143,20 @@ const Navbar = () => {
                 </Link>
               ))}
               <hr className="border-zinc-800 my-2" />
-              <button className="w-full py-3 text-center text-zinc-300 font-semibold border border-zinc-700 rounded-lg hover:bg-zinc-800 transition-colors">
-                Login
-              </button>
-              <button className="w-full py-3 text-center bg-cyan-500 text-black font-bold rounded-lg hover:bg-cyan-400 transition-colors flex items-center justify-center gap-2">
-                Download App <Download size={18} />
+              
+              {/* Login Button Removed */}
+
+              {/* Updated Mobile Button: Static "Launching Soon" state */}
+              <button 
+                disabled
+                className="w-full py-3 text-center bg-zinc-800 border border-zinc-700 text-zinc-500 font-bold rounded-lg cursor-not-allowed flex items-center justify-center gap-2"
+              >
+                Launching Soon <Download size={18} />
               </button>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
-
-      <style>{`
-        @keyframes shimmer {
-          100% { transform: translateX(100%); }
-        }
-        .group-hover\\:animate-shimmer {
-          animation: shimmer 1.5s infinite;
-        }
-      `}</style>
     </>
   );
 };

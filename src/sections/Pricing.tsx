@@ -74,7 +74,7 @@ const Pricing = () => {
   ];
 
   return (
-    <section className="relative w-full py-24 bg-[#050505] text-white font-sans overflow-hidden">
+    <section id="pricing" className="relative w-full py-24 bg-[#050505] text-white font-sans overflow-hidden">
       
       {/* Background Ambience */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">

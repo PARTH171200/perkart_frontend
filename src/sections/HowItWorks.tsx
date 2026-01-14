@@ -34,7 +34,7 @@ const ProductHowItWorks = () => {
   ];
 
   return (
-    <section className="relative w-full py-24 bg-[#0A0A0A] overflow-hidden font-sans">
+    <section id="how-it-works" className="relative w-full py-24 bg-[#0A0A0A] overflow-hidden font-sans">
       
       {/* Ambient Background Gradients */}
       <div className="absolute inset-0 pointer-events-none">

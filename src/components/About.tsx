@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Target, Globe, Zap, Search, ArrowRight, Quote } from 'lucide-react';
-
+import founderImage from '../assets/founder.jpeg'// Replace with actual path to founder's image
 const About = () => {
   
   // Scroll to top on load
@@ -105,7 +105,7 @@ const About = () => {
               <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-zinc-900 aspect-[3/4]">
                 {/* Placeholder for Founder Image - Replace src with actual photo */}
                 <img 
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop" 
+                  src={founderImage} 
                   alt="Aakash Rao" 
                   className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
                 />
@@ -157,7 +157,7 @@ const About = () => {
                  
                  <div className="ml-auto">
                     <a 
-                      href="https://linkedin.com" 
+                      href="https://www.linkedin.com/in/aakash-rao-a57b31381/" 
                       target="_blank" 
                       rel="noreferrer"
                       className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-black font-bold hover:bg-amber-500 transition-colors"

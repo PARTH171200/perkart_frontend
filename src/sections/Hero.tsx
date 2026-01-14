@@ -22,7 +22,6 @@ const Hero = () => {
   return (
     <section 
       ref={containerRef}
-      /* UPDATED: Added pt-20 to push visual center down slightly */
       className="relative w-full min-h-screen bg-[#030305] overflow-hidden flex flex-col justify-center items-center font-sans text-white selection:bg-indigo-500/30 pt-20"
     >
       
@@ -49,9 +48,7 @@ const Hero = () => {
       </div>
 
       {/* --- LAYER 3: HUD / TECH OVERLAYS --- */}
-      {/* UPDATED: Changed py-6 to pt-32 pb-6 so the text clears the navbar */}
       <div className="absolute inset-0 z-10 pointer-events-none px-6 pt-32 pb-6 flex flex-col justify-between">
-        {/* Top Bar */}
         <div className="flex justify-between items-start opacity-30 text-[10px] tracking-[0.2em] font-mono">
             <div className="flex gap-4">
                 <span>SYS.READY</span>
@@ -63,11 +60,9 @@ const Hero = () => {
             </div>
         </div>
         
-        {/* Side Crosshairs */}
         <div className="absolute top-1/2 left-6 w-1 h-12 bg-gradient-to-b from-transparent via-white/20 to-transparent"></div>
         <div className="absolute top-1/2 right-6 w-1 h-12 bg-gradient-to-b from-transparent via-white/20 to-transparent"></div>
 
-        {/* Bottom Bar */}
         <div className="flex justify-between items-end opacity-30 text-[10px] tracking-[0.2em] font-mono">
             <div>
                COORD: {Math.round(mousePosition.x)}, {Math.round(mousePosition.y)}
@@ -120,23 +115,46 @@ const Hero = () => {
           Point your camera at a problem, and let our visual intelligence architect the solution.
         </p>
 
-        {/* ACTION AREA */}
+        {/* UPDATED ACTION AREA */}
         <div className="flex flex-col sm:flex-row gap-5 items-center opacity-0 animate-slide-up animation-delay-500">
-          <button className="relative group overflow-hidden bg-white text-black px-8 py-4 rounded-2xl font-bold flex items-center gap-4 transition-all duration-300 hover:shadow-[0_0_40px_-10px_rgba(255,255,255,0.6)] hover:scale-105">
-            <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            <Smartphone className="w-6 h-6" />
-            <div className="flex flex-col items-start leading-none">
-                <span className="text-[10px] uppercase tracking-wider opacity-60">Download on</span>
-                <span className="text-lg">App Store</span>
+          
+          {/* App Store Button - Disabled / Launching Soon */}
+          <button 
+            disabled
+            className="relative group overflow-hidden bg-zinc-200 text-zinc-500 px-8 py-4 rounded-2xl font-bold flex items-center justify-center gap-4 transition-all duration-300 cursor-not-allowed w-64 h-20"
+          >
+            {/* Original Content - Slides Up */}
+            <div className="absolute flex items-center gap-4 transition-transform duration-300 group-hover:-translate-y-[200%]">
+                <Smartphone className="w-6 h-6 opacity-50" />
+                <div className="flex flex-col items-start leading-none">
+                    <span className="text-[10px] uppercase tracking-wider opacity-60">Download on</span>
+                    <span className="text-lg">App Store</span>
+                </div>
             </div>
-            <MoveRight className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
+            
+            {/* Launching Soon Text - Slides In */}
+            <div className="absolute inset-0 flex items-center justify-center text-indigo-600 font-bold transition-transform duration-300 translate-y-[200%] group-hover:translate-y-0">
+                Launching Soon
+            </div>
           </button>
 
-          <button className="relative group overflow-hidden bg-white/5 backdrop-blur-md border border-white/10 text-white px-8 py-4 rounded-2xl font-bold flex items-center gap-4 transition-all duration-300 hover:bg-white/10 hover:border-white/30">
-            <Globe className="w-6 h-6 text-gray-400 group-hover:text-white transition-colors" />
-            <div className="flex flex-col items-start leading-none">
-                <span className="text-[10px] uppercase tracking-wider opacity-60">Get it on</span>
-                <span className="text-lg">Google Play</span>
+          {/* Google Play Button - Disabled / Launching Soon */}
+          <button 
+            disabled
+            className="relative group overflow-hidden bg-white/5 border border-white/5 text-zinc-500 px-8 py-4 rounded-2xl font-bold flex items-center justify-center gap-4 transition-all duration-300 cursor-not-allowed w-64 h-20 hover:bg-white/5"
+          >
+            {/* Original Content - Slides Up */}
+            <div className="absolute flex items-center gap-4 transition-transform duration-300 group-hover:-translate-y-[200%]">
+                <Globe className="w-6 h-6 opacity-50" />
+                <div className="flex flex-col items-start leading-none">
+                    <span className="text-[10px] uppercase tracking-wider opacity-60">Get it on</span>
+                    <span className="text-lg">Google Play</span>
+                </div>
+            </div>
+
+            {/* Launching Soon Text - Slides In */}
+            <div className="absolute inset-0 flex items-center justify-center text-indigo-400 font-bold transition-transform duration-300 translate-y-[200%] group-hover:translate-y-0">
+                Launching Soon
             </div>
           </button>
         </div>
